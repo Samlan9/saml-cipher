@@ -16,15 +16,13 @@ AES:支援128､192､256bit的密鑰，更提供SIV模式來幫助減緩Nonce�
 RSA:使用4096bit密鑰，結合了PKCS#1 OAEP。  
 X448:使用了極為強大的X448加密演算法和非常節省資源的 CHACHA20POLY1305。  
 
-* RSA､X448､DES提供測試用金鑰，請勿用於加密任何機密資訊。
+* RSA､X448､DES提供測試用金鑰，請勿用於加密任何機密資訊(密碼：test)。
 
 ---
 
 ## 開放原始碼授權條款：  
 The pycryptodome module is copyrighted by Legrandin distributed under the following
 BSD license.  
-
-BSD license:
 
 All direct contributions to PyCryptodome are released under the following
 license. The copyright of each piece belongs to the respective author.
@@ -49,3 +47,27 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+The questionary module is copyrighted by tmbo distributed under the following
+MIT license.  
+
+Copyright 2020 Tom Bocklisch and contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
