@@ -21,7 +21,12 @@ concurrency:
       
 jobs:
   build:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: ["ubuntu-latest", "windows-latest", "macos-latest"] #暫時這樣
+      fail-fast: false # 某個系統失敗時，其他系統不要立刻中斷，以便看完整報告
+
+    runs-on: ${{ matrix.os }}
     timeout-minutes: 10  #重要！防止超時
 
     steps:
