@@ -18,7 +18,9 @@ RSA､X448､DES提供測試用金鑰，請勿用於加密任何機密資訊(密
 ---
 
 ## 如何使用？
-只須找到對應資料夾裡的.py檔案並直接運行即可！
+先安裝模組：`pip install -r requirements.txt`
+
+然後只須找到對應資料夾裡的.py檔案並直接運行即可！
 
 加密：
 <img width="2851" height="672" alt="RSA加密範例圖片" src="https://github.com/user-attachments/assets/d989773f-dc66-43ee-92bb-0e720d784430" />
