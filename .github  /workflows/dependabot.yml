@@ -1,0 +1,18 @@
+version: 2
+updates:
+  - package-ecosystem: "pip" # 你的套件管理工具
+    directory: "/"
+    
+    # 策略 1：拉長檢查週期。改為每週（weekly）或每月（monthly），避免每天都在跑檢查
+    schedule:
+      interval: "weekly" 
+      day: "saturday"        # 固定在星期天執行
+
+    # 策略 2：降低同時開啟的 PR 數量限制。預設是 5 個，限制成 2 個可以大幅減少 CI 觸發頻率
+    open-pull-requests-limit: 2
+
+    # 策略 3：群組化合併 PR。這是一年來最推的功能，將所有更新合併成一包 PR！
+    groups:
+      all-dependencies:    # 自訂群組名稱
+        patterns:
+          - "*"     
