@@ -1,0 +1,55 @@
+# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: Python package
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - "**.py"
+      - "requirements.txt"   # 建議一併納入,依賴變動也該觸發測試
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - "**.py"
+      - "requirements.txt"   # 建議一併納入,依賴變動也該觸發測試
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+      
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10  #重要！防止超時
+
+    steps:
+    # 1. 複製專案程式碼
+    - uses: actions/checkout@v4
+
+    # 2. 設定單一 Python 版本（固定 3.12，避免矩陣平行測試狂扣 3 倍額度）
+    - name: Set up Python
+      uses: actions/setup-python@v5 # 升級至官方最新穩定版 v5
+      with:
+        python-version: '3.12' # 如果您想改 3.10 或 3.11，直接改這個數字即可
+        cache: pip   #新版快取
+
+    # 4. 安裝依賴套件
+    - name: Install dependencies
+      run: |
+        python -m pip install flake8 pytest
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+    # 5. 程式碼排版與語法檢查 (Lint)
+    - name: Lint with flake8
+      run: |
+        # 若有語法錯誤或未定義變數，會立刻中斷並報錯
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # 排版與複雜度檢查（僅顯示警告，不會讓測試失敗）
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+    # 6. 執行測試
+    - name: Test with pytest
+      run: |
+        pytest
