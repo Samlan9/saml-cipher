@@ -1,0 +1,2 @@
+pycryptodome==3.23.0
+questionary==2.1.1
