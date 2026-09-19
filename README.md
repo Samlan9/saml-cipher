@@ -1,28 +1,35 @@
 # cipher
-different cipher
-
----
 
 這是一個用全部都用python寫的repo，有各種加密方式的程式，支援互動式加密，對使用者極度友善。
 
 ## 支援的加密方法：
-- DES(不安全)
-- AES-GCM-SIV
-- RSA
-- X448(with CHACHA20POLY1305)
+- [DES](https://en.wikipedia.org/wiki/Data_Encryption_Standard)(不安全)
+- [AES-GCM-SIV](https://en.wikipedia.org/wiki/AES-GCM-SIV)     
+- [RSA](https://en.wikipedia.org/wiki/RSA_cryptosystem)
+- [X448](https://en.wikipedia.org/wiki/Curve448)(with [CHACHA20POLY1305](https://en.wikipedia.org/wiki/ChaCha20-Poly1305))
 
 DES:使用64bits的密鑰和CTR模式。  
 AES:支援128､192､256bit的密鑰，更提供SIV模式來幫助減緩Nonce重複使用的風險。  
-RSA:使用4096bit密鑰，結合了PKCS#1 OAEP。  
+RSA:使用4096bit密鑰，結合了[PKCS#1 OAEP](https://en.wikipedia.org/wiki/PKCS_1)。  
 X448:使用了極為強大的X448加密演算法和非常節省資源的 CHACHA20POLY1305。  
 
-* RSA､X448､DES提供測試用金鑰，請勿用於加密任何機密資訊(密碼：test)。
+RSA､X448､DES提供測試用金鑰，請勿用於加密任何機密資訊(密碼：`test`)。
+
+---
+
+## 如何使用？
+只須找到對應資料夾裡的.py檔案並直接運行即可！
+
+加密：
+<img width="2851" height="672" alt="RSA加密範例圖片" src="https://github.com/user-attachments/assets/d989773f-dc66-43ee-92bb-0e720d784430" />
+
+解密：
+<img width="999" height="276" alt="RSA解密範例圖片" src="https://github.com/user-attachments/assets/14116e49-56c3-47cf-9c16-d7df882bfa60" />
 
 ---
 
 ## 開放原始碼授權條款：  
-The pycryptodome module is copyrighted by Legrandin distributed under the following
-BSD license.  
+##### The pycryptodome module is copyrighted by Legrandin distributed under the following BSD license.  
 
 All direct contributions to PyCryptodome are released under the following
 license. The copyright of each piece belongs to the respective author.
@@ -49,8 +56,7 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-The questionary module is copyrighted by tmbo distributed under the following
-MIT license.  
+##### The questionary module is copyrighted by Tom Bocklisch and contributors distributed under the following MIT license.  
 
 Copyright 2020 Tom Bocklisch and contributors
 
@@ -71,3 +77,8 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+我已盡全力處理所有著作權和許可事宜。如有任何疏漏，請立即告知—我非常樂意改正。感謝您的理解與支持！
+I’ve tried my absolute best to handle all copyright and licensing matters properly. If I happened to miss something, please let me know right away—I’m more than happy to make it right. Thank you for your grace and support!
