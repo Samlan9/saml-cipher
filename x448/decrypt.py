@@ -8,14 +8,15 @@ import sys
 print("HPKE X448+CHACHA20POLY1305")
 
 privn = input("私鑰名稱(不用加.pem)：")
-with open(privn + ".pem", "rt") as f:
-    data = f.read()
-    pwd = questionary.password("私鑰密碼：").ask()
-    try:
+try:
+    with open(privn + ".pem", "rt") as f:
+        data = f.read()
+        pwd = questionary.password("私鑰密碼：").ask()
+    
         privkey = ECC.import_key(data,pwd.encode("utf-8"))
-    except Exception as e:
-        print(f"讀取私鑰時發生錯誤，請檢查格式及密碼是否正確。錯誤碼：{e}")
-        sys.exit(1)
+except Exception as e:
+    print(f"讀取私鑰時發生錯誤，請檢查格式及密碼是否正確。錯誤碼：{e}")
+    sys.exit(1)
 
 ctn = input("密文檔案(不用加.enc):")
 with open(ctn + ".enc","rb") as f:

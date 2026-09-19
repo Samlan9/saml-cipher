@@ -46,9 +46,9 @@ ct = encryptor.seal(pt, auth_data=aad)
 
 print(f"密文(base64)：{b64encode(ct)}")
 
-encn = input("密文檔名(.enc)：")
+encn = input("密文檔名(不用加).enc：")
 if encn:
-    with open(encn, 'wb') as f:
+    with open(encn + ".enc", 'wb') as f:
         f.write(encryptor.enc)
         f.write(ct)
 else:
