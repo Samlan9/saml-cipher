@@ -3,15 +3,15 @@
 這是一個用全部都用python寫的repo，有各種加密方式的程式，支援互動式加密，對使用者極度友善。
 
 ## 支援的加密方法：
-- [DES](https://en.wikipedia.org/wiki/Data_Encryption_Standard)(不安全)
-- [AES-GCM-SIV](https://en.wikipedia.org/wiki/AES-GCM-SIV)     
-- [RSA](https://en.wikipedia.org/wiki/RSA_cryptosystem)
-- [X448](https://en.wikipedia.org/wiki/Curve448)(with [CHACHA20POLY1305](https://en.wikipedia.org/wiki/ChaCha20-Poly1305))
+- [DES](https://zh.wikipedia.org/wiki/%E8%B3%87%E6%96%99%E5%8A%A0%E5%AF%86%E6%A8%99%E6%BA%96)(不安全)
+- [AES-GCM-SIV(英文)](https://en.wikipedia.org/wiki/AES-GCM-SIV)     
+- [RSA](https://zh.wikipedia.org/wiki/RSA%E5%8A%A0%E5%AF%86%E6%BC%94%E7%AE%97%E6%B3%95)
+- [X448(英文)](https://en.wikipedia.org/wiki/Curve448)(with [CHACHA20POLY1305](https://zh.wikipedia.org/wiki/ChaCha20-Poly1305))
 
 DES:使用64bits的密鑰和CTR模式。  
 AES:支援128､192､256bit的密鑰，更提供SIV模式來幫助減緩Nonce重複使用的風險。  
-RSA（支援加密檔案）:使用4096bit密鑰，結合了[PKCS#1 OAEP](https://en.wikipedia.org/wiki/PKCS_1)，更配合ChaCha20Poly1305來加密檔案。
-X448:使用了極為強大的X448加密演算法和非常節省資源的 CHACHA20POLY1305。    
+RSA（支援加密檔案，python檔名為rsa-file-encrypt.py、rsa-file-decrypt.py）:使用4096bit密鑰，結合了[PKCS#1 OAEP(英文)](https://en.wikipedia.org/wiki/PKCS_1)，更配合ChaCha20Poly1305來加密檔案。  
+X448:使用了極為強大的X448加密演算法和非常節省資源的 CHACHA20POLY1305。      
 
 RSA､X448､DES提供測試用金鑰，請勿用於加密任何機密資訊(密碼：`test`)。
 
@@ -27,6 +27,10 @@ RSA､X448､DES提供測試用金鑰，請勿用於加密任何機密資訊(密
 
 解密：
 <img width="999" height="276" alt="RSA解密範例圖片" src="https://github.com/user-attachments/assets/14116e49-56c3-47cf-9c16-d7df882bfa60" />
+
+---
+
+### 遇到問題或有任何意見？按[這裡](https://github.com/Samlan9/saml-cipher/discussions/1)回報
 
 ---
 
