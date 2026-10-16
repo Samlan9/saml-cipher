@@ -1,2 +1,2 @@
-pycryptodome==3.24.0
+pycryptodome==3.24.1
 questionary==2.1.1
