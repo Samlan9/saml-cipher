@@ -28,7 +28,7 @@ if pubn == "":
     with open(f"{input('公鑰名稱(不用加.pem)：')}.pem", "wb") as f:
         data = pubkey.export_key(format='PEM')
         f.write(data)
-    print("儲存成功！")                                                                         else:
+    print("儲存成功！")                          
     try:
         with open(pubn + ".pem", "rt") as f:
             data = f.read()
