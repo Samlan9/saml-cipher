@@ -1,4 +1,4 @@
-# cipher
+# cipher（全新支援PQC！）
 
 這是一個用全部都用python寫的repo，有各種加密方式的程式，支援互動式加密，對使用者極度友善。
 
@@ -7,15 +7,19 @@
 - [AES-GCM-SIV(英文)](https://en.wikipedia.org/wiki/AES-GCM-SIV)     
 - [RSA](https://zh.wikipedia.org/wiki/RSA%E5%8A%A0%E5%AF%86%E6%BC%94%E7%AE%97%E6%B3%95)
 - [X448(英文)](https://en.wikipedia.org/wiki/Curve448)(with [CHACHA20POLY1305](https://zh.wikipedia.org/wiki/ChaCha20-Poly1305))
-- [x25519mlkem768(英文)](https://en.wikipedia.org/wiki/ML-KEM)
+- [👑x25519mlkem768(英文，全新升級！)](https://en.wikipedia.org/wiki/ML-KEM)(with [CHACHA20POLY1305](https://zh.wikipedia.org/wiki/ChaCha20-Poly1305))
 
 DES:使用64bits的密鑰和CTR模式。  
 AES:支援128､192､256bit的密鑰，更提供SIV模式來幫助減緩Nonce重複使用的風險。  
-RSA（支援加密檔案，python檔名為rsa-file-encrypt.py、rsa-file-decrypt.py）:使用4096bit密鑰，結合了[PKCS#1 OAEP(英文)](https://en.wikipedia.org/wiki/PKCS_1)，更配合ChaCha20Poly1305來加密檔案。  
+RSA（支援加密檔案，python檔名為`rsa-file-encrypt.py`、`rsa-file-decrypt.py`）:使用4096bit密鑰，結合了[PKCS#1 OAEP(英文)](https://en.wikipedia.org/wiki/PKCS_1)，更配合ChaCha20Poly1305來加密檔案。  
 X448:使用了極為強大的X448加密演算法和非常節省資源的 `CHACHA20POLY1305`。      
-x25519mlkem768（全新升級）:用於抵抗量子電腦非常有效。
+👑X25519MLKEM768（全新升級，使用cryptography）:用於抵抗量子電腦的[攻擊(英文)](https://postquantum.com/post-quantum/shors-algorithm-a-quantum-threat/)非常有效，可確保你的機密資料即使過了[Q-Day](https://www.ibm.com/think/news/q-day-has-already-begun-are-you-ready)還可保持機密，面對這個巨大威脅，強烈建議使用本方法加密機密檔案；本程式還特別為行動裝置進行最佳化，確保不會被[側信道攻擊](https://zh.wikipedia.org/zh-tw/%E6%97%81%E8%B7%AF%E6%94%BB%E5%87%BB)！
 
 RSA､X448､DES提供測試用金鑰，請勿用於加密任何機密資訊(密碼：`test`)。
+
+---
+
+## 遇到問題或有任何意見？按[這裡](https://github.com/Samlan9/saml-cipher/discussions/1)回報或反應
 
 ---
 
@@ -32,11 +36,7 @@ RSA､X448､DES提供測試用金鑰，請勿用於加密任何機密資訊(密
 
 ---
 
-### 遇到問題或有任何意見？按[這裡](https://github.com/Samlan9/saml-cipher/discussions/1)回報
-
----
-
-## 開放原始碼授權條款：  
+### 開放原始碼授權條款：  
 ##### The pycryptodome module is copyrighted by Legrandin distributed under the following BSD license.  
 
 All direct contributions to PyCryptodome are released under the following
@@ -294,6 +294,8 @@ under the terms of *both* these licenses.
    See the License for the specific language governing permissions and
    limitations under the License.
 
+BSD-3:
+
 Copyright (c) Individual contributors.
 All rights reserved.
 
@@ -324,5 +326,5 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ---
 
-我已盡全力處理所有著作權和許可事宜。如有任何疏漏，請立即告知—我非常樂意改正。感謝您的理解與支持！
-I’ve tried my absolute best to handle all copyright and licensing matters properly. If I happened to miss something, please let me know right away—I’m more than happy to make it right. Thank you for your grace and support!
+我已盡全力處理所有著作權和許可事宜。如有任何疏漏，請立即[告知](https://github.com/Samlan9/saml-cipher/discussions/)—我非常樂意改正。感謝您的理解與支持！
+I’ve tried my absolute best to handle all copyright and licensing matters properly. If I happened to miss something, please [let me know](https://github.com/Samlan9/saml-cipher/discussions/) right away—I’m more than happy to make it right. Thank you for your grace and support!
