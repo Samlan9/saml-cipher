@@ -1,4 +1,5 @@
 # cipher（全新支援PQC！）
+# 看不懂？看[白話解釋版本](https://github.com/Samlan9/saml-cipher/wiki/%E5%90%8D%E8%A9%9E%E8%A7%A3%E9%87%8B)
 
 這是一個用全部都用python寫的repo，有各種加密方式的程式，支援互動式加密，對使用者極度友善，也解決了一般使用者不了解程式但又想用各種加密的問題。
 
