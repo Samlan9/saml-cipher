@@ -7,7 +7,7 @@ saml-cipher is a pure Python cryptographic utility designed for practical file a
 ## Core Modules & Supported Cryptography
 
 - [x25519mlkem768/](https://github.com/Samlan9/saml-cipher/tree/main/x25519mlkem768): Post-Quantum Cryptography (PQC) hybrid key encapsulation (X25519 + ML-KEM-768) paired with ChaCha20-Poly1305 AEAD. Quantum-resistant, side-channel attack hardened, and optimized for mobile devices.
-- [aes_gcm_siv/](https://github.com/Samlan9/saml-cipher/tree/main/aes_gcm_siv): AES-GCM-SIV authenticated encryption with 128, 192, and 256-bit keys, offering nonce-misuse resistance.
+- [aes_gcm/](https://github.com/Samlan9/saml-cipher/tree/main/aes_gcm_siv): AES-GCM authenticated encryption with 128, 192, and 256-bit keysresistance.
 - [rsa/](https://github.com/Samlan9/saml-cipher/tree/main/rsa): RSA 4096-bit encryption with PKCS#1 OAEP and ChaCha20-Poly1305 hybrid file encryption (`rsa-file-encrypt.py` / `rsa-file-decrypt.py`).
 - [x448/](https://github.com/Samlan9/saml-cipher/tree/main/x448): High-security elliptic-curve key exchange (Curve448) coupled with ChaCha20-Poly1305 encryption.
 - [des/](https://github.com/Samlan9/saml-cipher/tree/main/des): Legacy 64-bit DES in CTR mode (provided strictly for educational/demonstration purposes; cryptographically insecure).
@@ -31,6 +31,5 @@ saml-cipher is a pure Python cryptographic utility designed for practical file a
 
 - [Community Discussions](https://github.com/Samlan9/saml-cipher/discussions/1): Feedback, bug reports, and discussion board.
 - [NIST FIPS 203 (ML-KEM)](https://csrc.nist.gov/pubs/fips/203/final): Official standard for Module-Lattice-Based Key-Encapsulation Mechanism.
-- [RFC 8452 (AES-GCM-SIV)](https://www.rfc-editor.org/rfc/rfc8452): Specification for Nonce-Misuse-Resistant Authenticated Encryption.
 - [RFC 7748 (Curve25519 and Curve448)](https://www.rfc-editor.org/rfc/rfc7748): Elliptic Curves for Security.
 - [LICENSE](https://github.com/Samlan9/saml-cipher/blob/main/LICENSE): Licensing terms and third-party upstream disclosures.
