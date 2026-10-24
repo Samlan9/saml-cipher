@@ -5,7 +5,7 @@
 
 ## 支援的加密方法：
 - [DES](https://zh.wikipedia.org/wiki/%E8%B3%87%E6%96%99%E5%8A%A0%E5%AF%86%E6%A8%99%E6%BA%96)(不安全)
-- [AES-GCM(英文)](https://en.wikipedia.org/wiki/AES-GCM)(aes_gem_siv違誤打)     
+- [AES-GCM(英文)](https://en.wikipedia.org/wiki/AES-GCM)(aes_gem_siv為誤打，目前暫無)     
 - [RSA](https://zh.wikipedia.org/wiki/RSA%E5%8A%A0%E5%AF%86%E6%BC%94%E7%AE%97%E6%B3%95)
 - [X448(英文)](https://en.wikipedia.org/wiki/Curve448)(with [CHACHA20POLY1305](https://zh.wikipedia.org/wiki/ChaCha20-Poly1305))
 - [👑x25519mlkem768(英文，全新升級，用於加密！)](https://en.wikipedia.org/wiki/ML-KEM)(with [CHACHA20POLY1305](https://zh.wikipedia.org/wiki/ChaCha20-Poly1305))
