@@ -4,19 +4,19 @@
 這是一個用全部都用python寫的repo，有各種加密方式的程式，支援互動式加密，對使用者極度友善，也解決了一般使用者不了解程式但又想用各種加密的問題。
 
 ## 支援的加密方法：
-- [DES](https://zh.wikipedia.org/wiki/%E8%B3%87%E6%96%99%E5%8A%A0%E5%AF%86%E6%A8%99%E6%BA%96)(不安全)
-- [AES-GCM(英文)](https://en.wikipedia.org/wiki/AES-GCM)(aes_gcm_siv為誤打，目前暫未實施，未來會有。)       
-- [RSA](https://zh.wikipedia.org/wiki/RSA%E5%8A%A0%E5%AF%86%E6%BC%94%E7%AE%97%E6%B3%95)
-- [X448(英文)](https://en.wikipedia.org/wiki/Curve448)(with [CHACHA20POLY1305](https://zh.wikipedia.org/wiki/ChaCha20-Poly1305))
+- [🔵DES](https://zh.wikipedia.org/wiki/%E8%B3%87%E6%96%99%E5%8A%A0%E5%AF%86%E6%A8%99%E6%BA%96)(不安全)
+- [👑AES-GCM(英文)](https://en.wikipedia.org/wiki/AES-GCM)+[👑argon2id](https://en.wikipedia.org/wiki/Argon2) 支援使用自訂的密碼   (aes_gcm_siv為誤打，目前暫未實施，未來會有。)       
+- [🔵RSA](https://zh.wikipedia.org/wiki/RSA%E5%8A%A0%E5%AF%86%E6%BC%94%E7%AE%97%E6%B3%95)
+- [🔵X448(英文)](https://en.wikipedia.org/wiki/Curve448)(with [CHACHA20POLY1305](https://zh.wikipedia.org/wiki/ChaCha20-Poly1305))
 - [👑x25519mlkem768(英文，全新升級，用於加密！)](https://en.wikipedia.org/wiki/ML-KEM)(with [CHACHA20POLY1305](https://zh.wikipedia.org/wiki/ChaCha20-Poly1305))  
 - [👑mldsa65mu(英文，全新升級，用於簽章！)](https://www.encryptionconsulting.com/ml-dsa-and-pq-signing/)
 
-DES:使用64bits的密鑰和CTR模式。  
-AES:支援128､192､256bit的密鑰。 
-RSA（支援加密檔案，python檔名為`rsa-file-encrypt.py`、`rsa-file-decrypt.py`）:使用4096bit密鑰，結合了[PKCS#1 OAEP(英文)](https://en.wikipedia.org/wiki/PKCS_1)，更配合ChaCha20Poly1305來加密檔案。  
-X448:使用了極為強大的X448加密演算法和非常節省資源的 `CHACHA20POLY1305`。      
-👑X25519MLKEM768（全新升級，使用cryptography）:用於抵抗量子電腦的[攻擊(英文)](https://postquantum.com/post-quantum/shors-algorithm-a-quantum-threat/)非常有效，可確保你的機密資料即使過了[Q-Day](https://www.ibm.com/think/news/q-day-has-already-begun-are-you-ready)還可保持機密，面對這個巨大威脅，強烈建議使用本方法加密機密檔案；本程式還特別為行動裝置進行最佳化，確保不會被[側信道攻擊](https://zh.wikipedia.org/zh-tw/%E6%97%81%E8%B7%AF%E6%94%BB%E5%87%BB)！
-👑mldsa65mu(英文，全新升級，用於簽章！)：用於抵抗量子電腦的[攻擊(英文)](https://postquantum.com/post-quantum/shors-algorithm-a-quantum-threat/)非常有效，可確保你的機密資料即使過了[Q-Day](https://www.ibm.com/think/news/q-day-has-already-begun-are-you-ready)還可確保完整性，面對這個巨大威脅，強烈建議使用本方法簽章檔案！
+🔵DES:使用64bits的密鑰和CTR模式。  
+👑AES GCM + Argon2id:使用256bit的密鑰，使用argon2id，***👍👍👍具有依據電腦資源自動調整記憶體用量的功能，在節省記憶體消耗量與安全性間取得最佳平衡！*** 也結合了強大的aes gcm，Argon2用來防止GPU暴力破解，效果堅強（Argon2為2015PHC冠軍）。   
+🔵RSA（支援加密檔案，python檔名為`rsa-file-encrypt.py`、`rsa-file-decrypt.py`）:使用4096bit密鑰，結合了[PKCS#1 OAEP(英文)](https://en.wikipedia.org/wiki/PKCS_1)，更配合ChaCha20Poly1305來加密檔案。  
+🔵X448:使用了極為強大的X448加密演算法和非常節省資源的 `CHACHA20POLY1305`。      
+👑X25519MLKEM768（全新升級，使用cryptography）:用於抵抗量子電腦的[攻擊(英文)](https://postquantum.com/post-quantum/shors-algorithm-a-quantum-threat/)非常有效，可確保你的機密資料即使過了[Q-Day](https://www.ibm.com/think/news/q-day-has-already-begun-are-you-ready)還可保持機密，面對這個巨大威脅，**強烈建議使用本方法加密機密檔案**；本程式還特別為行動裝置進行最佳化，確保不會被[側信道攻擊](https://zh.wikipedia.org/zh-tw/%E6%97%81%E8%B7%AF%E6%94%BB%E5%87%BB)！  
+👑mldsa65mu(英文，全新升級，用於簽章！)：用於抵抗量子電腦的[攻擊(英文)](https://postquantum.com/post-quantum/shors-algorithm-a-quantum-threat/)非常有效，可確保你的機密資料即使過了[Q-Day](https://www.ibm.com/think/news/q-day-has-already-begun-are-you-ready)還可確保完整性，面對這個巨大威脅， **強烈建議使用本方法簽章檔案！**
 
 RSA､X448､DES提供測試用金鑰，請勿用於加密任何機密資訊(密碼：`test`)。
 
