@@ -1,35 +1,47 @@
 # saml-cipher
 
-> An interactive, user-friendly Python cryptographic toolkit supporting classical symmetric/asymmetric ciphers and Post-Quantum Cryptography (PQC: X25519 + ML-KEM-768).
+> A pure-Python interactive cryptographic toolkit providing modern symmetric ciphers, hybrid post-quantum cryptography (PQC), and user-friendly CLI workflows.
 
-saml-cipher is a pure Python cryptographic utility designed for practical file and text encryption. It provides a guided terminal interface via `questionary`, lowering the barrier for cryptographic operations. The repository features modern cryptography (AES-GCM-SIV, X448, RSA-4096 with ChaCha20-Poly1305) as well as quantum-resistant hybrid KEM algorithms designed to safeguard data against quantum cryptanalysis (Shor's algorithm, Q-Day).
+saml-cipher aims to make robust encryption accessible to all users through interactive command-line interfaces (powered by `questionary`) while supporting cutting-edge cryptography—including Post-Quantum Cryptography (ML-KEM, ML-DSA) ready for Q-Day.
 
-## Core Modules & Supported Cryptography
+## Core Features & Ciphers
 
-- [x25519mlkem768/](https://github.com/Samlan9/saml-cipher/tree/main/x25519mlkem768): Post-Quantum Cryptography (PQC) hybrid key encapsulation (X25519 + ML-KEM-768) paired with ChaCha20-Poly1305 AEAD. Quantum-resistant, side-channel attack hardened, and optimized for mobile devices.
-- [aes_gcm/](https://github.com/Samlan9/saml-cipher/tree/main/aes_gcm_siv): AES-GCM authenticated encryption with 128, 192, and 256-bit keysresistance.
-- [rsa/](https://github.com/Samlan9/saml-cipher/tree/main/rsa): RSA 4096-bit encryption with PKCS#1 OAEP and ChaCha20-Poly1305 hybrid file encryption (`rsa-file-encrypt.py` / `rsa-file-decrypt.py`).
-- [x448/](https://github.com/Samlan9/saml-cipher/tree/main/x448): High-security elliptic-curve key exchange (Curve448) coupled with ChaCha20-Poly1305 encryption.
-- [des/](https://github.com/Samlan9/saml-cipher/tree/main/des): Legacy 64-bit DES in CTR mode (provided strictly for educational/demonstration purposes; cryptographically insecure).
+- [X25519 + ML-KEM-768](https://github.com/Samlan9/saml-cipher/tree/main/x25519mlkem768): Hybrid post-quantum key encapsulation combined with ChaCha20-Poly1305. Designed to resist Shor's algorithm (Q-Day ready) and side-channel attacks on mobile devices.
+- [ML-DSA-65 (mu)](https://github.com/Samlan9/saml-cipher/tree/main/mldsa(mu)): Post-quantum digital signature scheme (ML-DSA with message updates) for long-term document and data integrity.
+- [AES-256-GCM + Argon2id](https://github.com/Samlan9/saml-cipher/tree/main/aes_gcm_argon2id): Authenticated encryption with Argon2id password-based KDF, featuring dynamic memory scaling to balance security and system resources against GPU brute-force attacks.
+- [X448](https://github.com/Samlan9/saml-cipher/tree/main/x448): High-security elliptic curve Diffie-Hellman key exchange (Curve448) coupled with ChaCha20-Poly1305 authenticated encryption.
+- [RSA 4096-bit](https://github.com/Samlan9/saml-cipher/tree/main/rsa): Asymmetric RSA encryption utilizing PKCS#1 OAEP padding and ChaCha20-Poly1305 for hybrid high-speed file encryption.
+- [DES CTR](https://github.com/Samlan9/saml-cipher/tree/main/des): 64-bit DES in CTR mode. Marked as INSECURE; strictly provided for educational and legacy research purposes.
 
-## Quickstart & Usage
+## Quick Start & Usage
 
-- [requirements.txt](https://github.com/Samlan9/saml-cipher/blob/main/requirements.txt): Runtime dependencies (`cryptography`, `pycryptodome`, `questionary`).
-- [README.md](https://github.com/Samlan9/saml-cipher/blob/main/README.md): Repository documentation in Traditional Chinese with CLI interface screenshots.
+- [requirements.txt](https://github.com/Samlan9/saml-cipher/blob/main/requirements.txt): Core dependencies including `cryptography`, `pycryptodome`, and `questionary`.
 
-### Execution Pattern
-1. Install dependencies: `pip install -r requirements.txt`
-2. Run any algorithm interactively: `python <directory>/<script_name>.py`
+### Installation
+```bash
+git clone https://github.com/Samlan9/saml-cipher.git
+cd saml-cipher
+pip install -r requirements.txt
+```
 
-## Security & Operational Context
+### Execution
+Run the respective script inside its cipher folder to enter interactive CLI mode:
+```bash
+python aes_gcm_argon2id/aes_gcm_argon2id.py
+python x25519mlkem768/x25519mlkem768.py
+python rsa-file-encrypt.py
+```
 
-- **Interactive CLI**: Driven by `questionary` interactive prompts; requires no complex command-line arguments.
-- **Test Credentials**: Sample keys and test vectors use the passphrase `test` (intended for testing only; do not use in production).
-- **Quantum Threat Mitigation**: Recommended for sensitive data protection against "Harvest Now, Decrypt Later" (HNDL) scenarios using the `x25519mlkem768` hybrid suite.
+## Security Notices
 
-## Optional & References
+- **Test Keys**: Embedded test keys across RSA, X448, and DES use default password `test`. NEVER use test keys in production environments.
+- **DES Notice**: DES is cryptographically broken and should never protect sensitive data.
+- **PQC Recommendation**: For long-term data security against quantum decryption (Harvest Now, Decrypt Later), prefer `x25519mlkem768`.
 
-- [Community Discussions](https://github.com/Samlan9/saml-cipher/discussions/1): Feedback, bug reports, and discussion board.
-- [NIST FIPS 203 (ML-KEM)](https://csrc.nist.gov/pubs/fips/203/final): Official standard for Module-Lattice-Based Key-Encapsulation Mechanism.
-- [RFC 7748 (Curve25519 and Curve448)](https://www.rfc-editor.org/rfc/rfc7748): Elliptic Curves for Security.
-- [LICENSE](https://github.com/Samlan9/saml-cipher/blob/main/LICENSE): Licensing terms and third-party upstream disclosures.
+## Optional
+
+- [Project Wiki & Glossary](https://github.com/Samlan9/saml-cipher/wiki/%E5%90%8D%E8%A9%9E%E8%A7%A3%E9%87%8B): Plain-language explanations of cryptographic terms for beginners.
+- [Full Wiki Documentation](https://github.com/Samlan9/saml-cipher/wiki): Complete user guides and conceptual documentation.
+- [Discussions & Issue Feedback](https://github.com/Samlan9/saml-cipher/discussions/1): Community questions, bug reports, and cryptographic algorithm requests.
+- [README.md](https://github.com/Samlan9/saml-cipher/blob/main/README.md): Project overview with visual CLI demonstration screenshots.
+- [LICENSE](https://github.com/Samlan9/saml-cipher/blob/main/LICENSE): Open-source license terms and upstream dependency notices (Apache 2.0).
