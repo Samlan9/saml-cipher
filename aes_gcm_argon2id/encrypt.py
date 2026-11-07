@@ -9,9 +9,8 @@ import sys
 print('\033[5;102m AES-GCM 256 \033[0m + Argon2id(Associated Data=python pycryptodome cipher-deuj2)加密')
 
 mem_avail = psutil.virtual_memory().available / (1024 * 1024)  #MB
-if mem_avail <= 1024: #1gb
-    print(f'可用記憶體過小，無法運行本程式，本程式須1gb以上可用記憶體，請嘗試關閉其他視窗或程式然後再試一次。')
-    sys.exit(1)
+if mem_avail <= 512: #0.5gb
+    print(f'可用記憶體過小，可能無法正常運行本程式，本程式須512mb以上可用記憶體才能穩定運作（仍然可運行，但不穩定）。')
 else:
     armem = round(mem_avail / 5) #mb,int
     if armem > 2048:   
