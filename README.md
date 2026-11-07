@@ -24,6 +24,8 @@ RSA､X448､DES提供測試用金鑰，請勿用於加密任何機密資訊(密
 
 ## 遇到問題或有任何意見？按[這裡](https://github.com/Samlan9/saml-cipher/discussions/1)回報或反應
 
+LLM? read [llms.txt](https://github.com/Samlan9/saml-cipher/blob/main/llms.txt)
+
 ---
 
 ## 如何使用？
